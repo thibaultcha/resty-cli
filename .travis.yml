@@ -28,6 +28,7 @@ install:
   - git clone https://github.com/openresty/no-pool-nginx.git ../no-pool-nginx
 
 script:
+  - cat /etc/hosts
   - export PATH=$PATH:`pwd`/nginx-devel-utils
   - ngx-build $NGINX_VERSION --with-ipv6 --with-http_realip_module --with-http_ssl_module --add-module=../lua-nginx-module --with-debug
   - export PATH=$PATH:`pwd`/work/nginx/sbin
